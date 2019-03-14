@@ -35,7 +35,7 @@
 	smudge = git-lfs smudge -- %f
 
 [commit]
-	template = ~/Projects/scripts/kakaopage/commit_template.txt
+	template = $HOME/Projects/settings/configs/kakaopage/scripts/commit_template.txt
 [core]
 	excludesfile = /Users/lucas/.gitignore_global
 [difftool "sourcetree"]

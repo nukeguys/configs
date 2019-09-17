@@ -24,6 +24,7 @@
 	rt = "!f() { git tag -d $(git tag -l $1); }; f"
 	rrt = "!f() { git push origin --no-verify -d $(git tag -l $1); }; f"
 	aliases = !git config --list | grep 'alias\\.' | sed 's/alias\\.\\([^=]*\\)=\\(.*\\)/\\1\\\t => \\2/' | sort
+	cb = "!f() { git checkout -b feature/KG-$1-$2; }; f"
 
 [user]
 	name = lucas-sung

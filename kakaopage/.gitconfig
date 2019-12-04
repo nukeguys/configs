@@ -25,6 +25,7 @@
 	rrt = "!f() { git push origin --no-verify -d $(git tag -l $1); }; f"
 	aliases = !git config --list | grep 'alias\\.' | sed 's/alias\\.\\([^=]*\\)=\\(.*\\)/\\1\\\t => \\2/' | sort
 	cb = "!f() { git checkout -b feature/KG-$1-$2; }; f"
+	rmb = "!f() { git branch -vv | grep 'origin/.*: gone]' | awk '{print $1}' | xargs git branch -d; }; f"
 
 [user]
 	name = lucas-sung
@@ -36,7 +37,7 @@
 	smudge = git-lfs smudge -- %f
 
 [commit]
-	template = $HOME/Projects/settings/configs/kakaopage/scripts/commit_template.txt
+	template = ~/Projects/settings/configs/kakaopage/scripts/commit_template.txt
 [core]
 	excludesfile = /Users/lucas/.gitignore_global
 [difftool "sourcetree"]
